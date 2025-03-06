@@ -1,13 +1,12 @@
 import { ThemeProvider } from "@/components/theme-provider";
-import { DashboardProvider } from "@/contexts/dashboard-context";
 import type { Metadata } from "next";
-import { Inter, M_PLUS_1 } from "next/font/google";
+import { M_PLUS_1 } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
-const inter = Inter()
-
-const mPlus = M_PLUS_1()
+const mPlus = M_PLUS_1({
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Expenses App",
