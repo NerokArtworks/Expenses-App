@@ -12,7 +12,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-const registerSchema = z.object({ 
+const registerSchema = z.object({
 	name: z.string().min(3, "Username must be at least 3 characters"),
 	email: z.string().email("Invalid email"),
 	password: z.string().min(6, "Password must be at least 6 characters"),
@@ -34,7 +34,7 @@ export default function Register() {
 		resolver: zodResolver(registerSchema),
 	});
 
-	const onSubmit = async (data: any) => {
+	const onSubmit = async (data: z.infer<typeof registerSchema>) => {
 		setLoading(true);
 
 		const res = await fetch("/api/auth/register", {

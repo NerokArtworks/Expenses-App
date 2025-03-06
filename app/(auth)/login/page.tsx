@@ -29,7 +29,7 @@ export default function Login() {
 		resolver: zodResolver(loginSchema),
 	});
 
-	const onSubmit = async (data: any) => {
+	const onSubmit = async (data: z.infer<typeof loginSchema>) => {
 		setLoading(true);
 
 		const res = await fetch("/api/auth/login", {

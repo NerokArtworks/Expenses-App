@@ -12,7 +12,7 @@ const ExpenseForm = () => {
 	const [amount, setAmount] = useState("")
 	const [description, setDescription] = useState("")
 	const [categoryId, setCategoryId] = useState<string | null>(null)
-	const [tags, setTags] = useState<string[]>([])
+	const [tags] = useState<string[]>([])
 	const router = useRouter()
 
 	const { data: categories } = useQuery<Category[]>({

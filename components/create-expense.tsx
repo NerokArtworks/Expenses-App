@@ -33,7 +33,7 @@ const CreateExpense = () => {
 	const [open, setOpen] = useState(false)
 	const [loading, setLoading] = useState(false)
 
-	const submitExpense = async (e: React.MouseEvent<HTMLButtonElement>) => {
+	const submitExpense = async () => {
 		if (!amount || !tag) {
 			toast.error("Please fill in all fields.")
 			return
