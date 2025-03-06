@@ -24,6 +24,7 @@ export async function GET() {
 
 		return new Response(JSON.stringify(user), { status: 200 });
 	} catch (error) {
+		console.log(error)
 		return new Response("Invalid or expired token", { status: 401 });
 	}
 }

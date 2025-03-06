@@ -29,7 +29,7 @@ const Transactions = () => {
 			) : (
 				<div className="flex flex-col space-y-4">
 					{expenses.length === 0 ? (
-						<span className="text-sm">You haven't registered any transactions yet!</span>
+						<span className="text-sm">You haven&apos;t registered any transactions yet!</span>
 					) : (
 						expenses.map((expense: Expense) => (
 							<div key={expense.id} className="flex justify-between items-center bg-secondary p-4 rounded-lg space-x-4 shadow hover:shadow-md hover:bg-secondary/80 transition-all duration-150">
@@ -40,7 +40,6 @@ const Transactions = () => {
 											{expense.amount.toString()}
 										</span>
 									</div>
-									{/* <p>{expense.categoryId ?? 'Unknown'}</p>  */}
 									<p>Date: {new Date(expense.createdAt).toLocaleDateString()}</p>
 								</div>
 								<button
