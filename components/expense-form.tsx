@@ -26,7 +26,7 @@ const ExpenseForm = () => {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 
-		const expenseData: Prisma.ExpenseCreateInput = {
+		const expenseData = {
 			amount: parseFloat(amount),
 			description,
 			categoryId,
@@ -53,37 +53,37 @@ const ExpenseForm = () => {
 
 	return (
 		<QueryClientProvider client={new QueryClient}>
-		<form onSubmit={handleSubmit} className="space-y-4">
-			<Input
-				type="number"
-				placeholder="Amount"
-				value={amount}
-				onChange={(e) => setAmount(e.target.value)}
-				required
-			/>
+			<form onSubmit={handleSubmit} className="space-y-4">
+				<Input
+					type="number"
+					placeholder="Amount"
+					value={amount}
+					onChange={(e) => setAmount(e.target.value)}
+					required
+				/>
 
-			<Input
-				type="text"
-				placeholder="Description"
-				value={description}
-				onChange={(e) => setDescription(e.target.value)}
-			/>
+				<Input
+					type="text"
+					placeholder="Description"
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+				/>
 
-			<Select value={categoryId ?? ''} onValueChange={setCategoryId} required>
-				<SelectTrigger>
-					<SelectValue placeholder="Select Category" />
-				</SelectTrigger>
-				<SelectContent>
-					{categories?.map((category) => (
-						<SelectItem key={category.id} value={category.id}>
-							{category.name}
-						</SelectItem>
-					))}
-				</SelectContent>
-			</Select>
+				<Select value={categoryId ?? ''} onValueChange={setCategoryId} required>
+					<SelectTrigger>
+						<SelectValue placeholder="Select Category" />
+					</SelectTrigger>
+					<SelectContent>
+						{categories?.map((category) => (
+							<SelectItem key={category.id} value={category.id}>
+								{category.name}
+							</SelectItem>
+						))}
+					</SelectContent>
+				</Select>
 
-			<Button type="submit">Create Expense</Button>
-		</form>
+				<Button type="submit">Create Expense</Button>
+			</form>
 		</QueryClientProvider>
 	)
 }
