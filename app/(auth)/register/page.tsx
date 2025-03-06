@@ -48,7 +48,6 @@ export default function Register() {
 		if (res.ok) {
 			router.push("/");
 		} else {
-			console.log(res)
 			alert("Error registering user.");
 		}
 	};

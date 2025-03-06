@@ -19,8 +19,6 @@ export async function POST(req: Request) {
 			data: { name, email, password: hashedPassword },
 		});
 
-		console.log(user);
-
 		const token = generateToken(user.id);
 
 		const response = NextResponse.json({ message: "User registered!" }, { status: 201 });

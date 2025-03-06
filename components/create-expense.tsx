@@ -22,9 +22,9 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select"
+import { useDashboard } from "@/contexts/dashboard-context"
 import { useState } from "react"
 import { toast } from "sonner"
-import { useDashboard } from "@/contexts/dashboard-context"
 
 const CreateExpense = () => {
 	const { handleCreateExpense } = useDashboard();

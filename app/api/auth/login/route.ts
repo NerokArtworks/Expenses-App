@@ -6,8 +6,6 @@ import { NextResponse } from "next/server"; // Respuesta HTTP para Next.js
 export async function POST(req: Request) {
 	const { email, password } = await req.json();
 
-	console.log('holaaaa');
-
 	if (!email || !password) {
 		return NextResponse.json({ error: "Missing fields" }, { status: 400 });
 	}

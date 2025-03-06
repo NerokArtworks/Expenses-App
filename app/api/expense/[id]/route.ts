@@ -15,8 +15,6 @@ export async function DELETE(req: Request) {
 		const url = new URL(req.url);
 		const id = url.pathname.split("/").pop();
 
-		console.log(url, id)
-
 		if (!id) {
 			return NextResponse.json({ error: "Transaction ID is required" }, { status: 400 });
 		}

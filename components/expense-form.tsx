@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
-import { Category, Prisma } from "@prisma/client"
+import { Category } from "@prisma/client"
 import { Input } from "./ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 import { Button } from "./ui/button"
